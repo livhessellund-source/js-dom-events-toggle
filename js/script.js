@@ -1,3 +1,4 @@
+"use strict";
 // Husk fra dag 1: skriv "use strict" herunder
 
 
@@ -16,7 +17,13 @@ changeImgBtn.addEventListener("click", function() {
     // "this" er den knap, der blev klikket på.
     // this.textContent er teksten, der står på knappen lige nu.
     // getImage.src er billedets kilde (hvilket billede der vises).
-    //
+    if (this.textContent === `Before`) {
+        getImage.src = `img/before.png`;
+        this.textContent = `After`; 
+    } else {
+         getImage.src = `img/after.png`;
+        this.textContent = `before`; 
+    }
     // Hvis this.textContent er "Before", så:
     //   - sæt getImage.src til "img/before.png"
     //   - sæt this.textContent til "After"
